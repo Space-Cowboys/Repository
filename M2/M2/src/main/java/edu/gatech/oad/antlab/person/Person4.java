@@ -9,16 +9,16 @@ package edu.gatech.oad.antlab.person;
  *  @version 1.1
  */
 public class Person4 {
-  /** Holds the persons real name */
-  private String name;
+/** Holds the persons real name */
+	private String name;
     /**
      * The constructor, takes in the persons
      * name
      * @param pname the person's real name
      */
-  public Person4(String pname) {
-    name = pname;
-  }
+	public Person4(String pname) {
+		name = pname;
+	}
     /**
      * This method should return a string
      * where each character is 1 greater 
@@ -31,7 +31,19 @@ public class Person4 {
      */
     private String calc(String input) {
       //Person 4 put your implementation here
-      return null;
+    	char[] array = input.toCharArray();
+    	char[] alpha = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+    	for (int i = 0; i < input.length(); i++) {
+    		for (int j = 0; j < alpha.length(); j++) {
+    			if (array[i].equals(alpha[j])) {
+    				array[i] = alpha[j + 1];
+    			} else {
+    				array[i] = array[i] + 1;
+    			}
+    		}
+    	}
+    	String str = new String(array);
+    	return str;
     }
     
     /**
@@ -43,7 +55,7 @@ public class Person4 {
      *         object
      */
     public String toString(String input) {
-      return name + calc(input);
+    	return name + calc(input);
     }
 
 }
