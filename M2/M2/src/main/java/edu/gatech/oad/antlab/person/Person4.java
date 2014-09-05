@@ -37,10 +37,9 @@ public class Person4 {
     		for (int j = 0; j < alpha.length(); j++) {
     			if (array[i].equals(alpha[j])) {
     				array[i] = alpha[j + 1];
-    			} else {
-    				array[i] = array[i] + 1;
     			}
     		}
+    		array[i] = (int) array[i] + 1;
     	}
     	String str = new String(array);
     	return str;
