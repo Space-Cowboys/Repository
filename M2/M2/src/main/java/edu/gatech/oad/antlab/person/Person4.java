@@ -33,20 +33,28 @@ public class Person4 {
       //Person 4 put your implementation here
     	char[] array = input.toCharArray();
     	char[] alpha = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+        boolean found = false;
+        String eString = "";
     	for (int i = 0; i < input.length(); i++) {
+            found = false;
     		for (int j = 0; j < alpha.length; j++) {
-                if (Character.isDigit(array[i])) {
-                    array[i] =(char) (Character.getNumericValue(alpha[i]) + 1);
-                } else if (array[i] == alpha[j]) {
+                 if (array[i] == alpha[j]) {
     				array[i] = alpha[j + 1];
+                    eString += array[i];
+                    found = true;
                     break;
     			}
     		}
+             if (!found) {
+                    int thing = Character.getNumericValue(array[i]);
+                    thing++;
+                    array[i] = 0;
+                    eString += thing;
     		
     	}
-    	String str = new String(array);
-    	return str;
     }
+            return eString;
+}
     
     /**
      * Return a string rep of this object
