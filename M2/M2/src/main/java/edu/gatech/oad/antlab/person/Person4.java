@@ -35,11 +35,14 @@ public class Person4 {
     	char[] alpha = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
     	for (int i = 0; i < input.length(); i++) {
     		for (int j = 0; j < alpha.length; j++) {
-    			if (array[i] == alpha[j]) {
+                if (Character.isDigit(array[i])) {
+                    array[i] =(char) (Character.getNumericValue(alpha[i]) + 1);
+                } else if (array[i] == alpha[j]) {
     				array[i] = alpha[j + 1];
+                    break;
     			}
     		}
-    		array[i] =(char) (Character.getNumericValue(alpha[i]) + 1);
+    		
     	}
     	String str = new String(array);
     	return str;
